@@ -1,7 +1,11 @@
 {
 	"name": "cqh-paste",
 	"displayName": "cqh_paste",
+	"publisher": "cqh",
 	"description": "y",
+	"repository": {
+		"url": "https://github.com/chen19901225/cqh_paste"
+	},
 	"version": "0.0.1",
 	"engines": {
 		"vscode": "^1.59.0"
