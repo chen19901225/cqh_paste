@@ -10,14 +10,30 @@
 		"Other"
 	],
 	"activationEvents": [
-		"onCommand:cqh-paste.helloWorld"
+		"*"
 	],
 	"main": "./dist/extension.js",
 	"contributes": {
 		"commands": [
 			{
-				"command": "cqh-paste.helloWorld",
-				"title": "Hello World"
+				"command": "cqh-paste.copy",
+				"title": "cqhpaste copy"
+			},
+			{
+				"command": "cqh-paste.paste",
+				"title": "cqh paste past"
+			}
+		],
+		"keybindings": [
+			{
+                "command": "cqh-paste.copy",
+                "key": "alt+f c",
+                "when": "editorTextFocus && editorHasSelection"
+            },
+			{
+				"command": "cqh-paste.paste",
+				"key": "alt+f v",
+				"when": "editorTextFocus"
 			}
 		]
 	},
