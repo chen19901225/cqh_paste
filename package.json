@@ -6,9 +6,9 @@
 	"repository": {
 		"url": "https://github.com/chen19901225/cqh_paste"
 	},
-	"version": "0.0.1",
+	"version": "0.0.2",
 	"engines": {
-		"vscode": "^1.59.0"
+		"vscode": "^1.58.0"
 	},
 	"categories": [
 		"Other"
@@ -21,7 +21,7 @@
 		"commands": [
 			{
 				"command": "cqh-paste.copy",
-				"title": "cqhpaste copy"
+				"title": "cqh paste copy"
 			},
 			{
 				"command": "cqh-paste.paste",
@@ -32,14 +32,29 @@
 			{
                 "command": "cqh-paste.copy",
                 "key": "alt+f c",
-                "when": "editorTextFocus && editorHasSelection"
+                "when": "editorTextFocus"
             },
 			{
 				"command": "cqh-paste.paste",
 				"key": "alt+f v",
 				"when": "editorTextFocus"
 			}
-		]
+		],
+		"menus": {
+            "editor/context": [
+                {
+                    "when": "!inOutput && editorTextFocus && editorHasSelection",
+                    "command": "cqh-paste.copy",
+                    "group": "cqh-past"
+                },
+				{
+                    "when": "!inOutput && editorTextFocus && editorHasSelection",
+                    "command": "cqh-paste.paste",
+                    "group": "cqh-past"
+                }
+                
+            ]
+        }
 	},
 	"scripts": {
 		"vscode:prepublish": "npm run package",

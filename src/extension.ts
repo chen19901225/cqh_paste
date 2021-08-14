@@ -23,8 +23,8 @@ export function activate(context: vscode.ExtensionContext) {
 
 	context.subscriptions.push(disposable);
 
-	let pasteDisposable = vscode.commands.registerTextEditorCommand("cqh-paste.copy", (textEditor: vscode.TextEditor, edit: vscode.TextEditorEdit) => {
-		cqh_paste(textEditor, edit)
+	let pasteDisposable = vscode.commands.registerTextEditorCommand("cqh-paste.paste", async (textEditor: vscode.TextEditor, edit: vscode.TextEditorEdit) => {
+		await cqh_paste(textEditor, edit)
 	})
 	context.subscriptions.push(pasteDisposable);
 }
